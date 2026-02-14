@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install netcat for healthcheck and entrypoint
+RUN apk add --no-cache netcat-openbsd
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+# Make entrypoint executable
+RUN chmod +x entrypoint-hardhat.sh
+
+EXPOSE 8545
+
+CMD ["./entrypoint-hardhat.sh"]

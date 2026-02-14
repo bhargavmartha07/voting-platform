@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Hardhat
+artifacts/
+cache/
+typechain-types/
+
+# Next.js
+.next/
+out/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary Files
+deploy_output.txt
+deploy_output_utf8.txt
+output.txt
+
+# OS File
+.DS_Store
+Thumbs.db

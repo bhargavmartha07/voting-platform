@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY frontend/package*.json ./
+RUN npm install
+
+COPY frontend/ .
+
+# Ensure env variables are available during build if needed
+ARG NEXT_PUBLIC_RPC_URL=http://localhost:8545
+ENV NEXT_PUBLIC_RPC_URL=$NEXT_PUBLIC_RPC_URL
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
